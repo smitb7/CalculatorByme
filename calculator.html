@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculetor</title>
+    <link rel="stylesheet" href="cssofcalculate.css">
+</head>
+
+<body>
+
+    <div id="calculetor">
+        <input type="text" id="display" readonly>
+        <div id="keys">
+            <button onclick="appenddisplay('+')" class="operators">+</button>
+            <button onclick="appenddisplay('7')">7</button>
+            <button onclick="appenddisplay('8')">8</button>
+            <button onclick="appenddisplay('9')">9</button>
+            <button onclick="appenddisplay('-')" class="operators">-</button>
+            <button onclick="appenddisplay('4')">4</button>
+            <button onclick="appenddisplay('5')">5</button>
+            <button onclick="appenddisplay('6')">6</button>
+            <button onclick="appenddisplay('*')" class="operators">*</button>
+            <button onclick="appenddisplay('1')">1</button>
+            <button onclick="appenddisplay('2')">2</button>
+            <button onclick="appenddisplay('3')">3</button>
+            <button onclick="appenddisplay('/')" class="operators">/</button>
+            <button onclick="appenddisplay('0')">0</button>
+            <button onclick="appenddisplay('.')">.</button>
+            <button onclick="calculate()" > = </button>
+            <button onclick="cleardisplay()" class="operators">AC</button>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>
+
+
+<script>
+
+const display = document.getElementById("display")
+
+function appenddisplay(input){
+    display.value += input ;
+
+}
+
+function cleardisplay(){
+    display.value = " " ; 
+
+}
+
+function calculate (){
+
+    try{
+        display.value = eval(display.value)
+    }
+    catch{
+        display.value = "Error"
+    }
+}
+
+
+
+</script>
